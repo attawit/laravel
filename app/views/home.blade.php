@@ -3,7 +3,7 @@
 @section('content')
 
 @if(Auth::check())
-	<p>Hello {{Auth::user()->username}}</p>
+	<p>Hello user {{Auth::user()->username}}</p>
 @else
 	<p> You are not login in</p>
 @endif
