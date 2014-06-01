@@ -96,7 +96,8 @@ class AccountController extends BaseController {
         if( $validator->fails() ){
             return Redirect::route('account-create')
                 ->withErrors($validator)
-                ->withInput();
+                ->withInput()
+                ->with('varning','form-group has-error');
         }
             else{
                 $email      = Input::get('email');

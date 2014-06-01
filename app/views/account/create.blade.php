@@ -6,47 +6,46 @@
         <div class="col-lg-6">
 
             <form action="{{URL::route('account-create-post')}}" method="post">
-
                 <div class="input-group">
-                    <span class="input-group-addon">Email:</span>
-                    <input type="text" name="email"{{ Input::old('email') ? ' value="'.e(Input::old('email')). '"' : ''}} class="form-control">
-                    <span class="input-group-addon">
-                        @if( $errors->has('email') )
+                    <span class="input-group-addon"><i class="fa fa-cloud"></i></span>
+                    <input placeholder="Email:" type="text" name="email"{{ Input::old('email') ? ' value="'.e(Input::old('email')). '"' : ''}} class="form-control">
+                </div>
+                    @if( $errors->has('email') )
+                        <span class="label label-warning">
                             {{ $errors->first('email') }}
-                        @endif
-                    </span>
-                </div>
+                        </span>
+                    @endif
 
                 <div class="input-group">
-                    <span class="input-group-addon">Name:</span>
-                    <input type="text" name="username" {{ Input::old('username') ? ' value="'.e(Input::old('username')). '"' : ''}}class="form-control" >
-                    <span class="input-group-addon">
-                        @if( $errors->has('username') )
-                            {{ $errors->first('username') }}
-                        @endif
-                     </span>
+                    <span class="input-group-addon"><i class="fa fa-pied-piper-alt"></i></span>
+                    <input placeholder="Name:" type="text" name="username" {{ Input::old('username') ? ' value="'.e(Input::old('username')). '"' : ''}}class="form-control" >
                 </div>
+                    @if( $errors->has('username') )
+                        <span class="label label-warning">
+                        {{ $errors->first('username') }}
+                        </span>
+                    @endif
 
                 <div class="input-group">
-                    <span class="input-group-addon">Password:</span>
-                    <input type="password" name="password" class="form-control" >
-                    <span class="input-group-addon">
-                        @if( $errors->has('password') )
-                            {{ $errors->first('password') }}
-                        @endif
-                     </span>
+                    <span class="input-group-addon"><i class="fa fa-compass "></i></span>
+                    <input placeholder="Password:" type="password" name="password" class="form-control" >
                 </div>
+                    @if( $errors->has('password') )
+                        <span class="label label-warning">
+                        {{ $errors->first('password') }}
+                        </span>
+                    @endif
 
                 <div class="input-group">
-                    <span class="input-group-addon">Password again:</span>
-                    <input type="password" name="password_again" class="form-control" >
-                    <span class="input-group-addon">
-                        @if( $errors->has('password_again') )
-                            {{ $errors->first('password_again') }}
-                        @endif
-                    </span>
+                    <span class="input-group-addon"><i class="fa fa-child"></i></span>
+                    <input placeholder="Password again:" type="password" name="password_again" class="form-control" >      
                 </div>
-
+                    @if( $errors->has('password_again') )
+                        <span class="label label-warning">
+                        {{ $errors->first('password_again') }}
+                        </span><br>
+                    @endif
+                 <p></p>
                 <input type="submit" value="Create account" class="btn btn-primary">
                 {{Form::token()}}
             </form>
